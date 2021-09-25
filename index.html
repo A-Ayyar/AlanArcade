@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Flappy Bird using JS | by learnWD</title>
+</head>
+<body>
+<h3> <li> flappy bird</li>
+  <li>pack-man</li>
+  <li>tetris</li>
+
+  </h3>
+<iframe src="https://open.spotify.com/embed/playlist/30UpLlRfJmyEJX6pxqAW2y" width="20%" height="180" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+<canvas id="canvas" width="288" height="512"></canvas>
+<img src="Drawing.sketchpad.png" alt="Alan Menu" width="1000" height="400">
+<script src="main.js"></script>
+<div class="alan-btn"></div>
+<script type="text/javascript"
+        src="https://studio.alan.app/web/lib/alan_lib.min.js"></script>
+<script>
+  var cola = new Image();
+  var pizza = new Image();
+  var fries = new Image();
+  pizza.src = "pizza-menu.png"
+  function pizza() {
+    ctx.drawImage(pizza,bX,bY);
+  }
+
+
+
+  var alanBtnInstance = alanBtn({
+    key: "0b72b22586b025aa14b8b36c1a22b53d2e956eca572e1d8b807a3e2338fdd0dc/stage",
+
+
+    onCommand: function (commandData) {
+
+      if (commandData.command === "go-up") {
+        moveUp(parseInt(commandData.number));
+      }
+      if (commandData.command === "start-one") {
+        draw();
+      }
+      if (commandData.command ==="play-packman"){
+        location.href = "./pack.html";
+      }
+      if (commandData.command === "end-game") {
+        location.reload();
+
+      }
+      if (commandData.command ==="tetris"){
+        location.href = "./tet.html";
+      }
+
+      if (commandData.command ==="pizza") {
+      pizza()
+
+
+
+      }
+    },
+    rootEl: document.getElementById("alan-btn"),
+  });
+
+
+</script>
+
+</body>
+</html>
